@@ -8,7 +8,7 @@ function Navbar() {
                     <img src="walled_logo.svg" alt="logo_walled" />
                 </a>
                 <button
-                    className="navbar-toggler"
+                    className="navbar-toggler mt-3 ms-auto"
                     type="button"
                     data-bs-toggle="collapse"
                     data-bs-target="#navbarCollapse"
