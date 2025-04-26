@@ -7,7 +7,7 @@ function Hero() {
         <div className="hero p-5">
             <div className="container-fluid">
                 <div className="row align-items-center">
-                    <div className="greeting col-md-8">
+                    <div className="greeting col-md-9">
                         <h1 className="display-4 fw-bold mb-3">
                             Good Morning, Chelsea!
                         </h1>
@@ -16,8 +16,8 @@ function Hero() {
                             here
                         </p>
                     </div>
-                    <div className="my-account col-md-4 ms-auto">
-                        <div className="row align-items-center">
+                    <div className="my-account col-md-3 ms-auto">
+                        <div className="row align-items-center justify-content-end">
                             <div className="col text-end">
                                 <p className="fw-bold mb-1">
                                     Chelsea Immanuela
@@ -27,7 +27,7 @@ function Hero() {
                                 </p>
                             </div>
 
-                            <div className="col-3">
+                            <div className="col-auto">
                                 <img
                                     src={profPict}
                                     alt="Profile Picture"
