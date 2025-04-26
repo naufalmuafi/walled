@@ -1,0 +1,45 @@
+import React from "react";
+import profPict from "../assets/chelsea.jpg";
+import "../styles/Hero.css";
+
+function Hero() {
+    return (
+        <div className="hero bg-light-subtle p-5">
+            <div className="container-fluid">
+                <div className="row align-items-center">
+                    <div className="greeting col-md-8">
+                        <h1 className="display-4 fw-bold mb-3">
+                            Good Morning, Chelsea!
+                        </h1>
+                        <p className="lead mb-4">
+                            Check all your incoming and outgoing transactions
+                            here
+                        </p>
+                    </div>
+                    <div className="my-account col-md-4 ms-auto">
+                        <div className="row align-items-center">
+                            <div className="col text-end">
+                                <p className="fw-bold mb-1">
+                                    Chelsea Immanuela
+                                </p>
+                                <p className="text-secondary small">
+                                    Personal Account
+                                </p>
+                            </div>
+
+                            <div className="col-3">
+                                <img
+                                    src={profPict}
+                                    alt="Profile Picture"
+                                    className="rounded-circle profile-image"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+export default Hero;
