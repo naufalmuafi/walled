@@ -4,7 +4,7 @@ import "../styles/Hero.css";
 
 function Hero() {
     return (
-        <div className="hero bg-light-subtle p-5">
+        <div className="hero p-5">
             <div className="container-fluid">
                 <div className="row align-items-center">
                     <div className="greeting col-md-8">
