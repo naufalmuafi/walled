@@ -5,12 +5,7 @@ function TableFilter() {
         <div className="Tablefilter container-fluid p-5">
             <form className="row row-cols-lg-auto g-3 align-items-center">
                 <div className="col-12">
-                    <label
-                        class="visually-hidden"
-                        for="inlineFormInputGroupSearch"
-                    >
-                        Username
-                    </label>
+                    <label className="visually-hidden">Username</label>
                     <div className="input-group">
                         <div className="input-group-text shadow-sm border-end-0 bg-white">
                             <i className="bi bi-search text-secondary"></i>
@@ -24,10 +19,7 @@ function TableFilter() {
                 </div>
 
                 <div className="col-auto">
-                    <label
-                        className="col-form-label text-secondary"
-                        for="inlineFormSelectShow"
-                    >
+                    <label className="col-form-label text-secondary">
                         Show
                     </label>
                 </div>
@@ -37,19 +29,14 @@ function TableFilter() {
                         className="form-select shadow-sm"
                         id="inlineFormSelectShow"
                     >
-                        <option value="10" selected>
-                            Last 10 transactions
-                        </option>
+                        <option defaultValue="10">Last 10 transactions</option>
                         <option value="20">Last 20 transactions</option>
                         <option value="30">Last 30 transactions</option>
                     </select>
                 </div>
 
                 <div className="col-auto">
-                    <label
-                        className="col-form-label text-secondary"
-                        for="inlineFormSelectSortBy"
-                    >
+                    <label className="col-form-label text-secondary">
                         Sort By
                     </label>
                 </div>
@@ -59,27 +46,18 @@ function TableFilter() {
                         className="form-select shadow-sm"
                         id="inlineFormSelectSortBy"
                     >
-                        <option value="date" selected>
-                            Date
-                        </option>
+                        <option defaultValue="date">Date</option>
                         <option value="type">Type</option>
                     </select>
                 </div>
 
                 <div className="col-12">
-                    <label
-                        className="visually-hidden"
-                        for="inlineFormSelectOrder"
-                    >
-                        Order
-                    </label>
+                    <label className="visually-hidden">Order</label>
                     <select
                         className="form-select shadow-sm"
                         id="inlineFormSelectOrder"
                     >
-                        <option value="descending" selected>
-                            Descending
-                        </option>
+                        <option defaultValue="descending">Descending</option>
                         <option value="ascending">Ascending</option>
                     </select>
                 </div>

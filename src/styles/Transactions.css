@@ -1,0 +1,15 @@
+table {
+    padding: 6px;
+}
+
+table thead th {
+    line-height: 3;
+}
+
+table .positive {
+    color: #219653;
+}
+
+table .negative {
+    color: red;
+}
