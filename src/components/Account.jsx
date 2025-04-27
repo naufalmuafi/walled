@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import plusIcon from "../assets/plus_icon.svg";
 import sendIcon from "../assets/send_icon.svg";
 
 function Account() {
+    const [showBalance, setShowBalance] = useState(false);
+
     return (
         <div className="account container-fluid px-5">
             <div className="row">
@@ -17,11 +19,24 @@ function Account() {
                     <h5 className="fw-normal text-secondary">Balance</h5>
                     <div className="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
                         {/* Balance Information */}
-                        <div className="d-flex align-items-center gap-4">
-                            <h2 className="fw-semibold mb-0">
-                                Rp10.000.000,00
-                            </h2>
-                            <i className="bi bi-eye text-secondary h3"></i>
+                        <div className="d-flex align-items-center gap-5">
+                            {showBalance ? (
+                                <h2 className="fw-semibold mb-0">
+                                    Rp10.000.000,00
+                                </h2>
+                            ) : (
+                                <h2 className="fw-semibold mb-0">
+                                    Rp**********
+                                </h2>
+                            )}
+                            <button
+                                className={
+                                    showBalance
+                                        ? "btn bi bi-eye-slash text-secondary mb-0 fs-3"
+                                        : "btn bi bi-eye text-secondary mb-0 fs-3"
+                                }
+                                onClick={() => setShowBalance(!showBalance)}
+                            ></button>
                         </div>
 
                         {/* Icons Section */}
