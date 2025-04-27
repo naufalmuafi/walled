@@ -49,7 +49,7 @@ function Navbar() {
                         </li>
                         <li className="nav-item border-start">
                             <a href="#" className="nav-link mx-4">
-                                <i className="bi bi-sun text-warning"></i>
+                                <i className="bi bi-sun text-warning h4"></i>
                             </a>
                         </li>
                     </ul>
