@@ -9,7 +9,8 @@ function Hero() {
                 <div className="row align-items-center">
                     <div className="greeting col-md-9">
                         <h1 className="display-4 fw-bold mb-3">
-                            Good Morning, Chelsea!
+                            Good Morning,{" "}
+                            <span className="text-primary">Chelsea!</span>
                         </h1>
                         <p className="lead mb-4">
                             Check all your incoming and outgoing transactions
