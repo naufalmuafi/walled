@@ -4,6 +4,7 @@ table {
 
 table thead th {
     line-height: 3;
+    align-content: center;
 }
 
 table .positive {
