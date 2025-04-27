@@ -7,13 +7,13 @@ function PageNavButton() {
                 <button type="button" class="btn btn-outline px-4 disabled">
                     First
                 </button>
-                <button type="button" class="btn btn-outline-primary px-3">
-                    1
-                </button>
                 <button
                     type="button"
                     class="btn btn-outline-primary px-3 active"
                 >
+                    1
+                </button>
+                <button type="button" class="btn btn-outline-primary px-3">
                     2
                 </button>
                 <button type="button" class="btn btn-outline-primary px-3">

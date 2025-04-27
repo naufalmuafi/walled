@@ -6,9 +6,9 @@ import TopUp from "./pages/TopUp";
 function App() {
     return (
         <div className="app">
-            {/* <Home /> */}
+            <Home />
             {/* <Transfer /> */}
-            <TopUp />
+            {/* <TopUp /> */}
         </div>
     );
 }
