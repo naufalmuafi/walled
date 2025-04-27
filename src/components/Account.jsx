@@ -1,0 +1,51 @@
+import React from "react";
+import plusIcon from "../assets/plus_icon.svg";
+import sendIcon from "../assets/send_icon.svg";
+
+function Account() {
+    return (
+        <div className="account container-fluid px-5">
+            <div className="row">
+                {/* Left Side */}
+                <div className="col-12 col-md-auto bg-primary text-white rounded-4 p-5 align-content-center shadow-sm mb-4 mb-md-0">
+                    <h5 className="fw-normal mb-3">Account No.</h5>
+                    <h2 className="fw-bold">100899</h2>
+                </div>
+
+                {/* Right Side */}
+                <div className="col-12 col-md bg-white rounded-4 ms-md-5 p-5 shadow-sm">
+                    <h5 className="fw-normal text-secondary">Balance</h5>
+                    <div className="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                        {/* Balance Information */}
+                        <div className="d-flex align-items-center gap-4">
+                            <h2 className="fw-semibold mb-0">
+                                Rp10.000.000,00
+                            </h2>
+                            <i className="bi bi-eye text-secondary h3"></i>
+                        </div>
+
+                        {/* Icons Section */}
+                        <div className="d-flex gap-4">
+                            <button className="btn btn-primary rounded-3 shadow p-3">
+                                <img
+                                    src={plusIcon}
+                                    alt="plus icon"
+                                    style={{ width: "2rem", height: "2rem" }}
+                                />
+                            </button>
+                            <button className="btn btn-primary rounded-3 shadow p-3">
+                                <img
+                                    src={sendIcon}
+                                    alt="send icon"
+                                    style={{ width: "2rem", height: "2rem" }}
+                                />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+export default Account;
