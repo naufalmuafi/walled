@@ -27,7 +27,7 @@ function Navbar() {
                         <li className="nav-item mx-4">
                             <a
                                 href="#"
-                                className="nav-link active text-primary fw-bold"
+                                className="nav-link text-primary active fw-bold"
                             >
                                 Dashboard
                             </a>
