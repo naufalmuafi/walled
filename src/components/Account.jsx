@@ -2,8 +2,14 @@ import React, { useState } from "react";
 import plusIcon from "../assets/plus_icon.svg";
 import sendIcon from "../assets/send_icon.svg";
 
-function Account() {
-    const [showBalance, setShowBalance] = useState(false);
+function Account(userData, isLoading) {
+    const [showBalance, setShowBalance] = useState(true);
+
+    const accountNumber = userData.userData.accountNumber;
+    const balance = userData.userData.balance;
+    const currency = userData.userData.currency;
+
+    const loading = <div class="spinner-border" role="status"></div>;
 
     return (
         <div className="account container-fluid px-5">
@@ -11,7 +17,9 @@ function Account() {
                 {/* Left Side */}
                 <div className="col-12 col-md-auto bg-primary text-white rounded-4 p-5 align-content-center shadow-sm mb-4 mb-md-0">
                     <h5 className="fw-normal mb-3">Account No.</h5>
-                    <h2 className="fw-bold">100899</h2>
+                    <h2 className="fw-bold">
+                        {isLoading ? loading : accountNumber}
+                    </h2>
                 </div>
 
                 {/* Right Side */}
@@ -22,7 +30,13 @@ function Account() {
                         <div className="d-flex align-items-center gap-5">
                             {showBalance ? (
                                 <h2 className="fw-semibold mb-0">
-                                    Rp10.000.000,00
+                                    {isLoading ? (
+                                        loading
+                                    ) : (
+                                        <>
+                                            {currency} {balance}
+                                        </>
+                                    )}
                                 </h2>
                             ) : (
                                 <h2 className="fw-semibold mb-0">

@@ -3,7 +3,12 @@ import TableFilter from "./common/TableFilter";
 import PageNavButton from "./common/PageNavButton";
 import "../styles/Transactions.css";
 
-function Transactions() {
+function Transactions({ transactionsData, isLoading }) {
+    console.log("transactionsData", transactionsData);
+    console.log("isLoading", isLoading);
+
+    const loading = <div class="spinner-border" role="status"></div>;
+
     return (
         <>
             <TableFilter />
@@ -20,69 +25,34 @@ function Transactions() {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>20:10 - 30 June 2022</td>
-                            <td>Transfer</td>
-                            <td>Sendy</td>
-                            <td>Fore Coffee</td>
-                            <td className="negative">- 75.000,00</td>
-                        </tr>
-                        <tr>
-                            <td>20:10 - 30 June 2022</td>
-                            <td>Topup</td>
-                            <td></td>
-                            <td>Topup from Bank Transfer</td>
-                            <td className="positive">+ 1.000.000,00</td>
-                        </tr>
-                        <tr>
-                            <td>20:10 - 30 June 2022</td>
-                            <td>Transfer</td>
-                            <td>Spongebob</td>
-                            <td>Beli barang</td>
-                            <td className="negative">- 75.000,00</td>
-                        </tr>
-                        <tr>
-                            <td>20:10 - 30 June 2022</td>
-                            <td>Transfer</td>
-                            <td>Joko</td>
-                            <td>Transfer</td>
-                            <td className="positive">+ 1.000.000,00</td>
-                        </tr>
-                        <tr>
-                            <td>20:10 - 30 June 2022</td>
-                            <td>Transfer</td>
-                            <td>Joko</td>
-                            <td>Fore Coffee</td>
-                            <td className="negative">- 75.000,00</td>
-                        </tr>
-                        <tr>
-                            <td>20:10 - 30 June 2022</td>
-                            <td>Transfer</td>
-                            <td>Joko</td>
-                            <td>Fore Coffee</td>
-                            <td className="negative">- 75.000,00</td>
-                        </tr>
-                        <tr>
-                            <td>20:10 - 30 June 2022</td>
-                            <td>Topup</td>
-                            <td></td>
-                            <td>Topup from Bank Transfer</td>
-                            <td className="positive">+ 1.000.000,00</td>
-                        </tr>
-                        <tr>
-                            <td>20:10 - 30 June 2022</td>
-                            <td>Transfer</td>
-                            <td>Joko</td>
-                            <td>Fore Coffee</td>
-                            <td className="negative">- 75.000,00</td>
-                        </tr>
-                        <tr>
-                            <td>20:10 - 30 June 2022</td>
-                            <td>Topup</td>
-                            <td></td>
-                            <td>Topup from Bank Transfer</td>
-                            <td className="positive">+ 1.000.000,00</td>
-                        </tr>
+                        {isLoading ? (
+                            <>
+                                {loading}
+                                <p className="lead justify-content-center mt-3">
+                                    No transactions data.
+                                </p>
+                            </>
+                        ) : (
+                            transactionsData.map((transaction) => (
+                                <tr key={transaction.id}>
+                                    <td>{transaction.date}</td>
+                                    <td>{transaction.type}</td>
+                                    <td>
+                                        {transaction.from} / {transaction.to}
+                                    </td>
+                                    <td>{transaction.description}</td>
+                                    <td
+                                        className={
+                                            +transaction.amount > 0
+                                                ? "positive"
+                                                : "negative"
+                                        }
+                                    >
+                                        {transaction.amount}
+                                    </td>
+                                </tr>
+                            ))
+                        )}
                     </tbody>
                 </table>
             </div>
