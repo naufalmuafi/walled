@@ -17,7 +17,7 @@ function Account(userData, isLoading) {
                 {/* Left Side */}
                 <div className="col-12 col-md-auto bg-primary text-white rounded-4 p-5 align-content-center shadow-sm mb-4 mb-md-0">
                     <h5 className="fw-normal mb-3">Account No.</h5>
-                    <h2 className="fw-bold">
+                    <h2 className="fw-bold text-white">
                         {isLoading ? loading : accountNumber}
                     </h2>
                 </div>

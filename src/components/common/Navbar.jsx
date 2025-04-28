@@ -1,6 +1,9 @@
 import React from "react";
+import { useAuth } from "../../context/AuthContext";
 
 function Navbar() {
+    const { logout } = useAuth();
+
     return (
         <nav className="navbar navbar-expand-lg bg-white">
             <div className="container-fluid mx-5 py-2">
@@ -43,7 +46,7 @@ function Navbar() {
                             </a>
                         </li>
                         <li className="nav-item mx-4">
-                            <a href="#" className="nav-link">
+                            <a href="#" className="nav-link" onClick={logout}>
                                 Sign Out
                             </a>
                         </li>

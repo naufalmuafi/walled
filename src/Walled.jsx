@@ -4,14 +4,27 @@ import Transfer from "./pages/Transfer";
 import TopUp from "./pages/TopUp";
 import Login from "./pages/Login";
 
+import LoginForm from "./LoginForm";
+import { AuthProvider, useAuth } from "./context/AuthContext";
+
+const AppContent = () => {
+    const { isAuthenticated } = useAuth();
+
+    return isAuthenticated ? <Home /> : <LoginForm />;
+};
+
 function App() {
     return (
-        <div className="app">
+        <AuthProvider>
             {/* <Login /> */}
-            <Home />
+            {/* <Home /> */}
             {/* <Transfer /> */}
             {/* <TopUp /> */}
-        </div>
+
+            <div className="app">
+                <AppContent />
+            </div>
+        </AuthProvider>
     );
 }
 
