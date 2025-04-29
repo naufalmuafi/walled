@@ -7,7 +7,7 @@ function Transactions({ transactionsData, isLoading }) {
     console.log("transactionsData", transactionsData);
     console.log("isLoading", isLoading);
 
-    const loading = <div class="spinner-border" role="status"></div>;
+    const loading = <div className="spinner-border" role="status"></div>;
 
     return (
         <>
@@ -35,7 +35,17 @@ function Transactions({ transactionsData, isLoading }) {
                         ) : (
                             transactionsData.map((transaction) => (
                                 <tr key={transaction.id}>
-                                    <td>{transaction.date}</td>
+                                    <td>
+                                        {new Date(
+                                            transaction.date
+                                        ).toLocaleString("en-GB", {
+                                            hour: "2-digit",
+                                            minute: "2-digit",
+                                            day: "2-digit",
+                                            month: "long",
+                                            year: "numeric",
+                                        })}
+                                    </td>
                                     <td>{transaction.type}</td>
                                     <td>
                                         {transaction.from} / {transaction.to}

@@ -1,11 +1,11 @@
-import React from "react";
+import { AuthProvider, useAuth } from "./context/AuthContext";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import Home from "./pages/Home";
 import Transfer from "./pages/Transfer";
 import TopUp from "./pages/TopUp";
 import Login from "./pages/Login";
-
 import LoginForm from "./LoginForm";
-import { AuthProvider, useAuth } from "./context/AuthContext";
 
 const AppContent = () => {
     const { isAuthenticated } = useAuth();
@@ -16,14 +16,13 @@ const AppContent = () => {
 function App() {
     return (
         <AuthProvider>
-            {/* <Login /> */}
-            {/* <Home /> */}
-            {/* <Transfer /> */}
-            {/* <TopUp /> */}
-
-            <div className="app">
-                <AppContent />
-            </div>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<AppContent />} />
+                    <Route path="/transfer" element={<Transfer />} />
+                    <Route path="/topup" element={<TopUp />} />
+                </Routes>
+            </BrowserRouter>
         </AuthProvider>
     );
 }
